@@ -15,3 +15,13 @@ jobs:
 
       - name: Repository 파일 출력하기
         run: ls
+
+        # github actions에서 기본적으로 프로그램들이 대부분 깔려있기 때문에 npm을 사용할 수 있다. 
+      - name: 빌드하기
+        run: npm run build
+
+      - name: Debugging
+        run: |
+          ls
+          cd dist
+          ls
