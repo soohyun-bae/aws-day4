@@ -1,14 +1,25 @@
 name: Github Actions 실행시켜보기
 
+# main에 push가 되면 jobs실행시키기
 on:
   push:
     branches:
       - main
 
+
+# Workflow는 여러 개의 Job으로 이루어질 수 있다.
 jobs:
   My-Deploy-Job:
     runs-on: ubuntu-latest
 
+    # 하나의 Job은 여러 개의 step으로 이루어져있다.
+    # echo = console.log
     steps:
       - name: Hello World 출력하기
         run: echo "Hello World"
+
+      - name: 여러 명령어 문장 작성하기
+        run: |
+          echo "Good"
+          echo "Morning"
+          pwd
